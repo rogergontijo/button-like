@@ -1,4 +1,4 @@
-# button-like
+# like-button
 Application to control likes
 
 ### Used references backend
