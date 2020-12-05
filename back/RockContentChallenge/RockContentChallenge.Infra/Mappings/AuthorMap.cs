@@ -10,7 +10,7 @@ namespace RockContentChallenge.Infra.Mappings
         {
             base.Configure(builder);
             builder.ToTable("Author");
-            builder.Property(p => p.Name).IsRequired().HasMaxLength(100).HasColumnName("Name");
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(100).HasColumnName("Name").HasColumnType("varchar");
         }
     }
 }

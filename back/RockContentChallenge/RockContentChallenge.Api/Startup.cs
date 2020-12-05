@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RockContentChallenge.Aplication.AutoMapper;
 using RockContentChallenge.Infra.Context;
 using RockContentChallenge.Infra.IoC;
 
@@ -14,6 +15,7 @@ namespace RockContentChallenge.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AutoMapperConfig.RegisterMappings();
         }
 
         public IConfiguration Configuration { get; }

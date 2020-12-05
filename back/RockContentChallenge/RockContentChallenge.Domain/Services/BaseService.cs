@@ -2,6 +2,7 @@
 using RockContentChallenge.Domain.Interfaces.Repositories;
 using RockContentChallenge.Domain.Interfaces.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace RockContentChallenge.Domain.Services
 {
@@ -15,9 +16,14 @@ namespace RockContentChallenge.Domain.Services
             _repository = repository;
         }
 
-        public void Update(TEntity entity)
+        public async Task<TEntity> GetByIdAsync(Guid guid)
         {
-            _repository.Update(entity);
+            return await Task.Run(() => _repository.GetByIdAsync(guid));
+        }
+
+        public async Task UpdateAsync(TEntity entity)
+        {
+            _repository.UpdateAsync(entity);
         }
 
         public void Dispose()

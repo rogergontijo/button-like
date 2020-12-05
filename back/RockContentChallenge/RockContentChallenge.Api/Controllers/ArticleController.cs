@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RockContentChallenge.Aplication.Dtos;
 using RockContentChallenge.Aplication.Interfaces;
 using System;
 
@@ -11,15 +12,15 @@ namespace RockContentChallenge.Api.Controllers
         private readonly IArticleAppService _articleAppService;
         public ArticleController(IArticleAppService articleAppService)
         {
-            _articleAppService = articleAppService;
+            _articleAppService = articleAppService; 
         }
 
-        [HttpPut()]        
-        public IActionResult UpdateLike(int id, int value)
+        [HttpPut]        
+        public IActionResult UpdateLike(ArticleDto articleDto)
         {
             try
             {
-                return new OkObjectResult(_articleAppService.UpdateAsync(value));
+                return new OkObjectResult(_articleAppService.UpdateAsync(articleDto));
             }
             catch (Exception ex)
             {
