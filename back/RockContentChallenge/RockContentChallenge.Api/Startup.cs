@@ -46,6 +46,10 @@ namespace RockContentChallenge.Api
             {
                 endpoints.MapControllers();
             });
+
+            using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            var dbContext = serviceScope.ServiceProvider.GetService<ContextDb>();
+            dbContext.Database.Migrate();
         }
     }
 }

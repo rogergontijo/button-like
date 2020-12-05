@@ -10,7 +10,7 @@ namespace RockContentChallenge.Infra.IoC
 {
     public class DependencyInjectionConfig
     {
-        private IServiceCollection _services;
+        private readonly IServiceCollection _services;
 
         public DependencyInjectionConfig(IServiceCollection services)
         {
@@ -21,9 +21,11 @@ namespace RockContentChallenge.Infra.IoC
         {
             _services.AddScoped<IArticleAppService, ArticleAppService>();
 
+            _services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             _services.AddScoped<IArticleService, ArticleService>();
 
-            _services.AddScoped<IArticleRepository, ArticleRepository>();
+            _services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            _services.AddScoped<IArticleRepository, ArticleRepository>();            
         }
     }
 }
