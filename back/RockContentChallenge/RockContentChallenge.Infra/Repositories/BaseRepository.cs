@@ -30,7 +30,7 @@ namespace RockContentChallenge.Infra.Repositories
             _context.Set<TEntity>().Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }       
 
         public void Dispose()

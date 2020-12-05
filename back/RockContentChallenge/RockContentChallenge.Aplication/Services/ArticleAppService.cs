@@ -27,7 +27,7 @@ namespace RockContentChallenge.Aplication.Services
             var articleDb = await GetByIdAsync(new Guid(articleDto.Guid));
             articleDb.AmountLike += articleDto.AmountLike;
             
-            _articleService.UpdateAsync(Mapper.Map<ArticleDto, Article>(articleDb));
+            await _articleService.UpdateAsync(Mapper.Map<ArticleDto, Article>(articleDb));
         }        
     }
 }

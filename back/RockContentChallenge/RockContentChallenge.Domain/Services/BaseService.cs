@@ -18,17 +18,45 @@ namespace RockContentChallenge.Domain.Services
 
         public async Task<TEntity> GetByIdAsync(Guid guid)
         {
-            return await _repository.GetByIdAsync(guid);
+            try
+            {
+                return await _repository.GetByIdAsync(guid);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task UpdateAsync(TEntity entity)
         {
-            _repository.UpdateAsync(entity);
+            try
+            {
+                ValidateBeforeUpdate(entity);
+                await _repository.UpdateAsync(entity); 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }        
 
         public void Dispose()
         {
             _repository.Dispose();
+        }
+
+        private void ValidateBeforeUpdate(TEntity entity)
+        {
+            if (entity == null)
+            {
+                throw new Exception("Entity cannot be null.");
+            }
+
+            if (entity.Guid == null || entity.Guid == Guid.Empty)
+            {
+                throw new Exception("Non-existent entity.");
+            }
         }
     }
 }

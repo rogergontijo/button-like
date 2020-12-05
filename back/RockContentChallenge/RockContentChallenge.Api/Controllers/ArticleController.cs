@@ -22,7 +22,7 @@ namespace RockContentChallenge.Api.Controllers
         {
             try
             {
-                _articleAppService.UpdateAsync(articleDto);
+                await _articleAppService.UpdateAsync(articleDto);
 
                 return new OkResult();
             }
@@ -30,6 +30,21 @@ namespace RockContentChallenge.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
-        }        
+        }
+        
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            try
+            {
+                var guid = new Guid(id);                
+
+                return new OkObjectResult(await _articleAppService.GetByIdAsync(guid));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
