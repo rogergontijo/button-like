@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Infra"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Test", "RockContentChallenge.Test\RockContentChallenge.Test.csproj", "{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Aplication", "RockContentChallenge.Aplication\RockContentChallenge.Aplication.csproj", "{D1D225B1-563D-4DCA-A67A-B1D3B5746043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
