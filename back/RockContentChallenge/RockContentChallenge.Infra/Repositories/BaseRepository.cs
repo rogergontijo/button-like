@@ -15,19 +15,23 @@ namespace RockContentChallenge.Infra.Repositories
         public BaseRepository(ContextDb context)
         {
             _context = context;
-        }              
+        }
 
         public async Task<TEntity> GetByIdAsync(Guid guid)
         {
-            return await _context.Set<TEntity>().FindAsync(guid);
+            var entity = await _context.Set<TEntity>().FindAsync(guid);
+            _context.Entry(entity).State = EntityState.Detached;
+
+            return entity;
         }
 
         public async Task UpdateAsync(TEntity entity)
         {
             _context.Set<TEntity>().Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-        }
+
+            _context.SaveChangesAsync();
+        }       
 
         public void Dispose()
         {

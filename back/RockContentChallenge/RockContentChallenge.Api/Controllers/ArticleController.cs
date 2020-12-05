@@ -2,10 +2,12 @@
 using RockContentChallenge.Aplication.Dtos;
 using RockContentChallenge.Aplication.Interfaces;
 using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace RockContentChallenge.Api.Controllers
 {
-    [Route("api/articles")]
+    [Route("articles")]
     [ApiController]
     public class ArticleController : ControllerBase
     {
@@ -16,17 +18,18 @@ namespace RockContentChallenge.Api.Controllers
         }
 
         [HttpPut]        
-        public IActionResult UpdateLike(ArticleDto articleDto)
+        public async Task<IActionResult> UpdateAsync(ArticleDto articleDto)
         {
             try
             {
-                return new OkObjectResult(_articleAppService.UpdateAsync(articleDto));
+                _articleAppService.UpdateAsync(articleDto);
+
+                return new OkResult();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
-        }
+        }        
     }
 }

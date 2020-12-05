@@ -5,6 +5,14 @@ namespace RockContentChallenge.Infra.Migrations
 {
     public partial class InitialCreate : Migration
     {
+        private readonly string SQL_INITIAL_CREATE_AUTHOR = @$"
+            INSERT INTO Author
+            VALUES ('{new Guid("d2c469fc-515b-4161-bffd-ab91beed76e2")}', 'Roger Gontijo Resende', '{DateTime.Now}')";
+
+        private readonly string SQL_INITIAL_CREATE_ARTICLE = @$"
+            INSERT INTO Article
+            VALUES (NEWID(), 'Oportunidade Rock Content', 'Vaga .NET Developer + oportunidade de obter fluência em inglês.', '{new Guid("d2c469fc-515b-4161-bffd-ab91beed76e2")}', 0, '{DateTime.Now}')";
+
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -46,6 +54,9 @@ namespace RockContentChallenge.Infra.Migrations
                 name: "IX_Article_AuthorGuid",
                 table: "Article",
                 column: "AuthorGuid");
+
+            migrationBuilder.Sql(SQL_INITIAL_CREATE_AUTHOR);
+            migrationBuilder.Sql(SQL_INITIAL_CREATE_ARTICLE);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

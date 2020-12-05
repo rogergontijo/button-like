@@ -7,6 +7,6 @@ namespace RockContentChallenge.Aplication.Interfaces
     public interface IArticleAppService
     {
         Task<ArticleDto> GetByIdAsync(Guid guid);
-        Task UpdateAsync(ArticleDto value);
+        Task UpdateAsync(ArticleDto value);       
     }
 }
