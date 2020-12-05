@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using RockContentChallenge.Domain.Entities;
 
 namespace RockContentChallenge.Domain.Interfaces.Services
 {
-    public interface IArticleService
-    {
-        Task UpdateAmountLikeAsync(int value);
+    public interface IArticleService : IBaseService<Article>
+    {        
     }
 }

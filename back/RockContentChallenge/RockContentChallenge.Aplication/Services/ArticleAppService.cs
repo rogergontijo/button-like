@@ -11,11 +11,11 @@ namespace RockContentChallenge.Aplication.Services
         public ArticleAppService(IArticleService articleService)
         {
             _articleService = articleService;
-        }
+        }        
 
-        public async Task UpdateAmountLikeAsync(int value)
+        public async Task UpdateAsync(object value)
         {
-            await _articleService.UpdateAmountLikeAsync(value);
+            //await _articleService.Update(value);
         }
     }
 }

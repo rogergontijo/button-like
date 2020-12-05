@@ -14,12 +14,12 @@ namespace RockContentChallenge.Api.Controllers
             _articleAppService = articleAppService;
         }
 
-        [HttpPut]
-        public IActionResult UpdateLike(int value)
+        [HttpPut()]        
+        public IActionResult UpdateLike(int id, int value)
         {
             try
             {
-                return new OkObjectResult(_articleAppService.UpdateAmountLikeAsync(value));
+                return new OkObjectResult(_articleAppService.UpdateAsync(value));
             }
             catch (Exception ex)
             {

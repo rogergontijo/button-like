@@ -1,13 +1,14 @@
-﻿using RockContentChallenge.Domain.Interfaces.Repositories;
-using System.Threading.Tasks;
+﻿using RockContentChallenge.Domain.Entities;
+using RockContentChallenge.Domain.Interfaces.Repositories;
+using RockContentChallenge.Infra.Context;
 
 namespace RockContentChallenge.Infra.Repositories
 {
-    public class ArticleRepository : IArticleRepository
+    public class ArticleRepository : BaseRepository<Article>, IArticleRepository
     {
-        public Task UpdateAmountLikeAsync(int value)
+        public ArticleRepository(ContextDb contextDb)
+            : base(contextDb)
         {
-            throw new System.NotImplementedException();
-        }
+        }       
     }
 }
