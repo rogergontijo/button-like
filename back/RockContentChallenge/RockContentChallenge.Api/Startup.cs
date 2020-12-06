@@ -39,6 +39,7 @@ namespace RockContentChallenge.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(a => a.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseHttpsRedirection();
 
