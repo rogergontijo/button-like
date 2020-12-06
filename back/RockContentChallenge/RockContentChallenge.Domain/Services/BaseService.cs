@@ -2,6 +2,7 @@
 using RockContentChallenge.Domain.Interfaces.Repositories;
 using RockContentChallenge.Domain.Interfaces.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace RockContentChallenge.Domain.Services
 {
@@ -9,20 +10,53 @@ namespace RockContentChallenge.Domain.Services
         where TEntity : BaseClass
     {
         private readonly IBaseRepository<TEntity> _repository;
-        
+
         public BaseService(IBaseRepository<TEntity> repository)
         {
             _repository = repository;
         }
 
-        public void Update(TEntity entity)
+        public async Task<TEntity> GetByIdAsync(Guid guid)
         {
-            _repository.Update(entity);
+            try
+            {
+                return await _repository.GetByIdAsync(guid);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
+
+        public async Task UpdateAsync(TEntity entity)
+        {
+            try
+            {
+                ValidateBeforeUpdate(entity);
+                await _repository.UpdateAsync(entity); 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }        
 
         public void Dispose()
         {
             _repository.Dispose();
+        }
+
+        private void ValidateBeforeUpdate(TEntity entity)
+        {
+            if (entity == null)
+            {
+                throw new Exception("Entity cannot be null.");
+            }
+
+            if (entity.Guid == null || entity.Guid == Guid.Empty)
+            {
+                throw new Exception("Non-existent entity.");
+            }
         }
     }
 }

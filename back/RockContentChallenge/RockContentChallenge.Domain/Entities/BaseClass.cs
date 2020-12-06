@@ -9,7 +9,7 @@ namespace RockContentChallenge.Domain.Entities
 
         public BaseClass()
         {
-            CreateDate = DateTime.UtcNow;
+            CreateDate = DateTime.Now;
         }
     }
 }

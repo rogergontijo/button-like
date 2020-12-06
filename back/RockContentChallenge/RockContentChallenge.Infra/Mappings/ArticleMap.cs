@@ -8,11 +8,11 @@ namespace RockContentChallenge.Infra.Mappings
     {
         public override void Configure(EntityTypeBuilder<Article> builder)
         {
-            base.Configure(builder);
+            base.Configure(builder);            
             builder.ToTable("Article");
-            builder.Property(p => p.Name).IsRequired().HasMaxLength(100).HasColumnName("Name");
-            builder.Property(p => p.Text).IsRequired().HasColumnName("Text");
-            builder.Property(p => p.AuthorGuid).IsRequired().HasColumnName("AuthorGuid");
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(100).HasColumnName("Name").HasColumnType("varchar");
+            builder.Property(p => p.Text).IsRequired().HasColumnName("Text").HasColumnType("varchar(max)");
+            builder.Property(p => p.AuthorGuid).IsRequired().HasColumnName("AuthorGuid").HasColumnType("uniqueidentifier");
             builder.Property(p => p.AmountLike).IsRequired().HasColumnName("AmountLike");
 
             //Foreign Key

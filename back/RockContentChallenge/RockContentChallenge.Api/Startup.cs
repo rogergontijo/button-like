@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RockContentChallenge.Aplication.AutoMapper;
 using RockContentChallenge.Infra.Context;
 using RockContentChallenge.Infra.IoC;
 
@@ -14,6 +15,7 @@ namespace RockContentChallenge.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AutoMapperConfig.RegisterMappings();
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +28,8 @@ namespace RockContentChallenge.Api
             services.AddControllers();
             services.AddDbContext<ContextDb>(options => options.UseSqlServer(Configuration.GetConnectionString("DbRockContentChallenge")));
             dependencyInjection.RegisterServices();
+            services.AddControllers().AddNewtonsoftJson
+                (options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

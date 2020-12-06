@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Api", "RockContentChallenge.Api\RockContentChallenge.Api.csproj", "{385A59E9-15A1-481B-A34A-E2F1B5C27070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContentChallenge.Api", "RockContentChallenge.Api\RockContentChallenge.Api.csproj", "{385A59E9-15A1-481B-A34A-E2F1B5C27070}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Domain", "RockContentChallenge.Domain\RockContentChallenge.Domain.csproj", "{7AA21CDE-7A28-4C80-8CE7-D05B3DCC52FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContentChallenge.Domain", "RockContentChallenge.Domain\RockContentChallenge.Domain.csproj", "{7AA21CDE-7A28-4C80-8CE7-D05B3DCC52FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Infra", "RockContentChallenge.Infra\RockContentChallenge.Infra.csproj", "{FAE25645-F484-49DE-9A19-6F20F0E25E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContentChallenge.Infra", "RockContentChallenge.Infra\RockContentChallenge.Infra.csproj", "{FAE25645-F484-49DE-9A19-6F20F0E25E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Test", "RockContentChallenge.Test\RockContentChallenge.Test.csproj", "{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContentChallenge.Aplication", "RockContentChallenge.Aplication\RockContentChallenge.Aplication.csproj", "{D1D225B1-563D-4DCA-A67A-B1D3B5746043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Aplication", "RockContentChallenge.Aplication\RockContentChallenge.Aplication.csproj", "{D1D225B1-563D-4DCA-A67A-B1D3B5746043}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContentChallenge.Test", "RockContentChallenge.Test\RockContentChallenge.Test.csproj", "{A7484A52-973F-4D7E-A2EA-4D98C60E76DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{FAE25645-F484-49DE-9A19-6F20F0E25E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE25645-F484-49DE-9A19-6F20F0E25E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAE25645-F484-49DE-9A19-6F20F0E25E5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A403D1A5-2D5E-4C1D-8648-E258888CEA8F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1D225B1-563D-4DCA-A67A-B1D3B5746043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7484A52-973F-4D7E-A2EA-4D98C60E76DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7484A52-973F-4D7E-A2EA-4D98C60E76DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7484A52-973F-4D7E-A2EA-4D98C60E76DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7484A52-973F-4D7E-A2EA-4D98C60E76DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

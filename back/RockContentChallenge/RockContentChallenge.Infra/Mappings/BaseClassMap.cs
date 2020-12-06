@@ -10,8 +10,8 @@ namespace RockContentChallenge.Infra.Mappings
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.HasKey(p => p.Guid);
-            builder.Property(p => p.Guid).IsRequired().HasColumnName("Guid");
-            builder.Property(p => p.CreateDate).IsRequired().HasColumnName("CreateDate");
+            builder.Property(p => p.Guid).IsRequired().HasColumnName("Guid").HasColumnType("uniqueidentifier");
+            builder.Property(p => p.CreateDate).IsRequired().HasColumnName("CreateDate").HasColumnType("datetime2");
         }
     }
 }
